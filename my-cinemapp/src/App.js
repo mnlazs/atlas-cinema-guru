@@ -1,4 +1,5 @@
 import './App.css';
+import './components/components.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Dashboard from './components/Dashboard';

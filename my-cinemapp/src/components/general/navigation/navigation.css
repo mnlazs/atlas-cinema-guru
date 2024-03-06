@@ -1,0 +1,22 @@
+/* src/components/navigation/navigation.css */
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #f5f5f5;
+}
+
+.nav-header img {
+  border-radius: 50%;
+}
+
+.nav-header p {
+  margin: 0;
+  padding: 0 1rem;
+}
+
+.logout-span {
+  cursor: pointer;
+  font-weight: bold;
+}
