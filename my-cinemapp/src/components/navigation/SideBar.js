@@ -2,13 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './navigation.css';
-import Activity from '../Activity'; // Asegúrate de ajustar la ruta de importación según tu estructura de proyecto
+import Activity from '../Activity';
 
 function SideBar() {
-  const [selected, setSelected] = useState("home");
-  const [small, setSmall] = useState(true); // Este estado se declara pero no se usa en el ejemplo proporcionado
   const [activities, setActivities] = useState([]);
-  const [showActivities, setShowActivities] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -25,7 +22,6 @@ function SideBar() {
   }, []);
 
   const setPage = (pageName) => {
-    setSelected(pageName);
     navigate(`/${pageName}`);
   };
 
@@ -36,13 +32,14 @@ function SideBar() {
         <li onClick={() => setPage('favorites')}>Favorites</li>
         <li onClick={() => setPage('watchlater')}>Watch Later</li>
       </ul>
-      {showActivities && (
+      {/* Considera implementar un mecanismo para cambiar showActivities si quieres mostrar esta lista */}
+      {/* {showActivities && (
         <ul>
           {activities.slice(0, 10).map((activity, index) => (
             <Activity key={index} activityDescription={activity} />
           ))}
         </ul>
-      )}
+      )} */}
     </nav>
   );
 }

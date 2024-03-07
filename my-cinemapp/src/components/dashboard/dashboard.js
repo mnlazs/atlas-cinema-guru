@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './dashboard.css';
-import Header from '../../components/navigation/Header';
+import Header from '../navigation/Header';
 import SideBar from '../../components/navigation/SideBar';
 
 // import HomePage from 'ruta-a-HomePage';
