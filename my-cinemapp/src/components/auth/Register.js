@@ -1,3 +1,4 @@
+/* src/routes/auth/Register.js */
 import React from 'react';
 import './auth.css';
 
@@ -8,27 +9,32 @@ function Register({ username, password, setUsername, setPassword }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="register-form">
-      <div>
-        <label htmlFor="username">Username</label>
+    <form onSubmit={handleSubmit} className="auth-form">
+      {/* Título */}
+      <h3 className="auth-title">Create a new account</h3>
+      {/* Envoltorios de los campos de entrada */}
+      <div className="input-wrapper">
+        <label htmlFor="username"> 🧸 Username:</label>
         <input
           type="text"
           id="username"
+          className="input-field"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
       </div>
-      <div>
-        <label htmlFor="password">Password</label>
+      <div className="input-wrapper">
+        <label htmlFor="password"> 🗝️ Password:</label>
         <input
           type="password"
           id="password"
+          className="input-field"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
-      <div>
-        <button type="submit">Register</button>
+      <div className="button-wrapper">
+        <button type="submit" className="button"> ✚ Sign Up </button>
       </div>
     </form>
   );

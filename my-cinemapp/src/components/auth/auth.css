@@ -5,6 +5,45 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  width: 100%;
+}
+
+.switch-buttons {
+  display: flex;
+  width: 442px;
+}
+
+.auth-title {
+  text-align: center;
+  margin: 20px 0; /* Ajusta esto según necesites */
+}
+
+
+.auth-header {
+  display: flex;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 1em;
+}
+  
+.header-button {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  background-color: #E31C25;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.header-button:not(.active) {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.header-button.active, .header-button:hover {
+  background-color: #BB000E;
+  color: #fff;
 }
 
 .auth-form {
@@ -14,53 +53,45 @@
   max-width: 400px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
   background-color: #fff;
 }
 
-.auth-form div {
-  margin-bottom: 15px;
+.input-wrapper {
+  width: 100%; /* Asegura que el input-wrapper ocupe el ancho completo */
+  margin-bottom: 10px; /* Espacio entre los campos de entrada */
 }
 
-.auth-form label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.auth-form input {
+.input-field {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.auth-form button {
-  padding: 10px;
   border: none;
-  border-radius: 4px;
-  color: #fff;
-  background-color: #007bff;
-  cursor: pointer;
-}
-
-.auth-form button:hover {
-  background-color: #0056b3;
-}
-
-/* Estilos para los botones de cambiar entre Iniciar Sesión y Registrarse */
-.switch-buttons {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.switch-buttons button {
-  margin: 0 10px;
-  background-color: #f0f0f0;
+  border-bottom: 2px solid #a90505; /* Línea roja en la parte inferior del campo */
+  background-color: transparent;
   color: #000;
 }
 
-.switch-buttons button.active {
-  background-color: #007bff;
-  color: #fff;
+.button-wrapper {
+  width: 100%; /* Asegura que el button-wrapper ocupe el ancho completo */
+  margin-top: 20px; /* Espacio antes del botón */
+}
+
+.button {
+  width: 30%;
+  padding: 10px;
+  border: none;
+  background-color: #E31C25; /* Color rojo para el botón */
+  color: white;
+  cursor: pointer;
+  float: right;
+}
+
+.button:hover {
+  background-color: #BB000E; /* Color más oscuro al pasar el cursor */
+}
+
+.new-account {
+  font-size: 14px;
+  color: #000;
+  text-align: center;
+  margin-top: 20px;
 }

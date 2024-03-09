@@ -6,35 +6,37 @@ import Login from './Login';
 import Register from './Register';
 
 function Authentication({ setIsLoggedIn, setUserUsername }) {
-  const [_switch, setSwitch] = useState(true); // true para Login, false para Register
+  const [_switch, setSwitch] = useState(true);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (event) => {
-    event.preventDefault(); // Evita el comportamiento por defecto del formulario
+    event.preventDefault();
 
     const authRoute = _switch ? '/api/auth/login' : '/api/auth/register';
     try {
       const response = await axios.post(authRoute, { username, password });
-      localStorage.setItem('accessToken', response.data.accessToken); // Almacena el token en localStorage
-      setUserUsername(username); // Actualiza el estado con el nombre de usuario
-      setIsLoggedIn(true); // Establece isLoggedIn como true
+      localStorage.setItem('accessToken', response.data.accessToken);
+      setUserUsername(username);
+      setIsLoggedIn(true);
     } catch (error) {
       console.error('Authentication error:', error);
     }
   };
 
   return (
-    <div>
-      <button onClick={() => setSwitch(true)}>Sign In</button>
-      <button onClick={() => setSwitch(false)}>Sign Up</button>
+    <div className="auth-container">
+      <div className="switch-buttons">
+      <button onClick={() => setSwitch(true)} className={_switch ? "header-button active" : "header-button"}>Sign In</button>
+      <button onClick={() => setSwitch(false)} className={!_switch ? "header-button active" : "header-button"}>Sign Up</button>
+    </div>
       {_switch ? (
         <Login
           username={username}
           password={password}
           setUsername={setUsername}
           setPassword={setPassword}
-          handleSubmit={handleSubmit} // Pasas handleSubmit como prop a Login
+          handleSubmit={handleSubmit}
         />
       ) : (
         <Register
@@ -42,7 +44,7 @@ function Authentication({ setIsLoggedIn, setUserUsername }) {
           password={password}
           setUsername={setUsername}
           setPassword={setPassword}
-          handleSubmit={handleSubmit} // Pasas handleSubmit como prop a Register
+          handleSubmit={handleSubmit}
         />
       )}
     </div>
