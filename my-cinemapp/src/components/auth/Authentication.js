@@ -1,7 +1,7 @@
 // src/routes/auth/Authentication.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // Importa useNavigate
+import { useNavigate } from 'react-router-dom';
 import './auth.css';
 import Login from './Login';
 import Register from './Register';
