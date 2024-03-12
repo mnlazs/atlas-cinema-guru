@@ -2,7 +2,7 @@
 import React from 'react';
 import './auth.css';
 
-function Register({ username, password, setUsername, setPassword }) {
+function Register({ username, password, setUsername, setPassword}) {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Registering:", username, password);

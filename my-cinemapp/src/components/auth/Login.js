@@ -1,41 +1,32 @@
-/* src/routes/auth/login.js */
+// src/routes/auth/Login.js
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './auth.css';
 
-function Login({ username, password, setUsername, setPassword, setSwitch }) {
-  const handleSubmit = (event) => {
+function Login({ username, password, setUsername, setPassword, setIsLoggedIn }) {
+  let navigate = useNavigate();
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // La lógica de inicio de sesión va aquí
-    console.log(username, password);
+    try {
+      // Aquí harías la llamada a la API para realizar el login.
+      // const response = await axios.post('/api/auth/login', { username, password });
+      // Aquí manejarías la respuesta de la API y guardarías el token en localStorage.
+      // localStorage.setItem('accessToken', response.data.accessToken);
+      setIsLoggedIn(true); // Actualizas el estado de isLoggedIn a true.
+      navigate('/dashboard'); // Rediriges al usuario al Dashboard.
+    } catch (error) {
+      console.error('Login error:', error);
+      // Manejar el error de login aquí, por ejemplo, mostrar un mensaje de error en la interfaz.
+    }
   };
 
   return (
     <form onSubmit={handleSubmit} className="auth-form">
-      {/* Título */}
-      <h3 className="auth-title">Sign in with your account</h3>
-      {/* Envoltorios de los campos de entrada */}
-      <div className="input-wrapper">
-        <label htmlFor="username"> 🧸 Username:</label>
-        <input
-          type="text"
-          id="username"
-          className="input-field"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </div>
-      <div className="input-wrapper">
-        <label htmlFor="password"> 🗝️ Password:</label>
-        <input
-          type="password"
-          id="password"
-          className="input-field"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </div>
+      {/* Título y campos de entrada como en tu código */}
+      {/* ... */}
       <div className="button-wrapper">
-        <button type="submit" className="button"> 🔑 Login </button>
+        <button type="submit" className="button">🔑 Login</button>
       </div>
     </form>
   );
