@@ -41,16 +41,18 @@ function Authentication({ setIsLoggedIn, setUserUsername }) {
           setUsername={setUsername}
           setPassword={setPassword}
           setIsLoggedIn={setIsLoggedIn}
+          setValue={setUsername}
           handleSubmit={handleSubmit} 
         />
       ) : (
-         // Lo mismo aplica para el componente Register
+         // Aplico lo mismo para el componente Register
         <Register
           username={username}
           password={password}
           setUsername={setUsername}
           setPassword={setPassword}
           setIsLoggedIn={setIsLoggedIn}
+          setValue={setPassword}
           handleSubmit={handleSubmit}
         />
       )}
