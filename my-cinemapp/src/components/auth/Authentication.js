@@ -24,7 +24,7 @@ function Authentication({ setIsLoggedIn, setUserUsername }) {
       navigate('/dashboard/dashboard'); // Añade la redirección al Dashboard aquí
     } catch (error) {
       console.error('Authentication error:', error);
-      // Aquí puedes mostrar un mensaje de error en la UI si es necesario
+
     }
   };
 
@@ -40,15 +40,18 @@ function Authentication({ setIsLoggedIn, setUserUsername }) {
           password={password}
           setUsername={setUsername}
           setPassword={setPassword}
-          handleSubmit={handleSubmit} // Asegúrate de que tu componente Login llame a esta función cuando el formulario sea enviado
+          setIsLoggedIn={setIsLoggedIn}
+          handleSubmit={handleSubmit} 
         />
       ) : (
+         // Lo mismo aplica para el componente Register
         <Register
           username={username}
           password={password}
           setUsername={setUsername}
           setPassword={setPassword}
-          handleSubmit={handleSubmit} // Lo mismo aplica para el componente Register
+          setIsLoggedIn={setIsLoggedIn}
+          handleSubmit={handleSubmit}
         />
       )}
     </div>

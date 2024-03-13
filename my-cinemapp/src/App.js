@@ -7,7 +7,7 @@ import './components/components.css';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+ console.log(setIsLoggedIn)
   useEffect(() => {
     const accessToken = localStorage.getItem('accessToken');
     if (accessToken) {
