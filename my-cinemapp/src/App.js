@@ -7,11 +7,12 @@ import './components/components.css';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  console.log( setIsLoggedIn)
   
   useEffect(() => {
     const accessToken = localStorage.getItem('accessToken');
     if (accessToken) {
-      axios.post('/api/auth/validate', {}, { // Asegúrate de que la ruta '/api/auth/validate' sea la correcta para validar el token
+      axios.post('http://localhost:8000/api/auth/login', {}, { // Asegúrate de que la ruta '/api/auth/validate' sea la correcta para validar el token
         headers: {
           Authorization: `Bearer ${accessToken}`
         }
@@ -25,7 +26,7 @@ function App() {
   }, []);
 
   return (
-    isLoggedIn ? <Dashboard /> : <Authentication />
+    isLoggedIn ? <Dashboard /> : <Authentication setIsLoggedIn={setIsLoggedIn} />
   );
 }
 

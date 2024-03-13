@@ -1,8 +1,9 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, BrowserRouter } from 'react-router-dom'; // Elimina BrowserRouter de la importación
 import './dashboard.css';
+import SideBar from '../navigation/SideBar';
 import Header from '../navigation/Header';
-import SideBar from '../../components/navigation/SideBar';
+import Authentication from '../auth/Authentication';
 
 // import HomePage from 'ruta-a-HomePage';
 // import Favorites from 'ruta-a-Favorites';
@@ -10,19 +11,11 @@ import SideBar from '../../components/navigation/SideBar';
 
 function Dashboard({ userUsername, setIsLoggedIn }) {
   return (
-    <BrowserRouter>
-      <div className="dashboard-container">
-        <Header userUsername={userUsername} setIsLoggedIn={setIsLoggedIn} />
-        <SideBar />
-        <Routes>
-          <Route path="/home" element={<div>HomePage Placeholder</div>} /> {/* Reemplaza el div con <HomePage /> cuando esté listo */}
-          <Route path="/favorites" element={<div>Favorites Placeholder</div>} /> {/* Reemplaza el div con <Favorites /> cuando esté listo */}
-          <Route path="/watchlater" element={<div>WatchLater Placeholder</div>} /> {/* Reemplaza el div con <WatchLater /> cuando esté listo */}
-          <Route path="*" element={<Navigate to="/home" replace />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
-  );
+    <div>
+      
+    </div>
+  )
 }
 
 export default Dashboard;
+

@@ -7,7 +7,7 @@ import Login from './Login';
 import Register from './Register';
 
 function Authentication({ setIsLoggedIn, setUserUsername }) {
-  const navigate = useNavigate(); // Inicializa navigate
+  const navigate = useNavigate();
   const [_switch, setSwitch] = useState(true);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -42,10 +42,9 @@ function Authentication({ setIsLoggedIn, setUserUsername }) {
           setPassword={setPassword}
           setIsLoggedIn={setIsLoggedIn}
           setValue={setUsername}
-          handleSubmit={handleSubmit} 
+          handleSubmit={handleSubmit}
         />
       ) : (
-         // Aplico lo mismo para el componente Register
         <Register
           username={username}
           password={password}
