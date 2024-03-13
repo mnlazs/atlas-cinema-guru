@@ -1,24 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Dashboard from './components/dashboard/dashboard';
+import Dashboard from './components/dashboard/Dashboard';
 import Authentication from './components/auth/Authentication';
 import './App.css';
 import './components/components.css';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  console.log( setIsLoggedIn)
+  const [isLoggedIn, setIsLoggedIn ] = useState(false);
+  const [accessToken, setAccessToken] = useState('');
+  const [UserName, setUsername] = useState('');
   
   useEffect(() => {
-    const accessToken = localStorage.getItem('accessToken');
-    if (accessToken) {
-      axios.post('http://localhost:8000/api/auth/login', {}, { // Asegúrate de que la ruta '/api/auth/validate' sea la correcta para validar el token
+    const storedToken = localStorage.getItem('accessToken');
+    if (storedToken) {
+      setAccessToken(storedToken)
+      console.log(accessToken)
+      axios.post('http://localhost:8000/api/auth/', {}, { // Asegúrate de que la ruta '/api/auth/validate' sea la correcta para validar el token
         headers: {
-          Authorization: `Bearer ${accessToken}`
+          Authorization: `Bearer ${storedToken}`
         }
       }).then(response => {
         setIsLoggedIn(true);
-        // La línea siguiente se ha eliminado ya que `userUsername` no se utiliza en el componente
+        setUsername(response.data.username)
       }).catch(error => {
         console.log(error);
       });

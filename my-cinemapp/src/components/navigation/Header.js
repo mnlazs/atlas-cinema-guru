@@ -8,6 +8,7 @@ function Header({ userUsername, setIsLoggedIn }) {
   };
 
   return (
+    <>
     <nav className="nav-header">
       <img src="https://picsum.photos/100/100" alt="User Avatar" />
       <p>Welcome, {userUsername}</p>
@@ -15,6 +16,8 @@ function Header({ userUsername, setIsLoggedIn }) {
         Logout
       </span>
     </nav>
+    
+    </>
   );
 }
 
