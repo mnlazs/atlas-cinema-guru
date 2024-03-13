@@ -3,8 +3,8 @@ import './components.css';
 
 function Activity({ activityDescription }) {
   return (
-    <li>
-      <p>{activityDescription}</p>
+    <li className="activity-item">
+      <p className="activity-description">{activityDescription}</p>
     </li>
   );
 }
