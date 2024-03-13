@@ -4,6 +4,7 @@ import Dashboard from './components/dashboard/Dashboard';
 import Authentication from './components/auth/Authentication';
 import './App.css';
 import './components/components.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn ] = useState(false);

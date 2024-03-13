@@ -1,49 +1,39 @@
-.dashboard-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-color: #f0f2f5;
-  color: #333;
-  font-family: 'Arial', sans-serif;
-}
-
-.dashboard-content {
-  padding: 20px;
-}
-
-.dashboard-header {
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  padding: 20px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #333;
-}
-
-.dashboard-main {
-  flex: 1;
-  padding: 20px;
-}
-
-.dashboard-footer {
-  background-color: #ffffff;
-  box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-  padding: 10px;
-  text-align: center;
-  font-size: 14px;
-}
-
-/* src/routes/dashboard/dashboard.css */
-.dashboard-container {
-  display: flex;
-}
-
-/* Estilos para SideBar */
+/* Estilos base para SideBar */
 .side-bar {
-  width: 200px; /* O cualquier ancho que prefieras */
-  background-color: #f0f0f5;
-  height: 100vh; /* Altura completa */
+  background-color: #f0f0f5; /* Color de fondo por defecto */
+  width: 50px; /* Ancho por defecto más pequeño */
+  height: 100vh;
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  transition: width 0.3s ease-in-out; /* Transición suave para el ancho */
+  overflow: hidden; /* Esconder contenido cuando la barra es pequeña */
+  position: relative; /* Para la posición absoluta de los hijos */
 }
 
+/* Estilos para el contenido de SideBar */
+.side-bar-content {
+  position: absolute; /* Posicionar absolutamente respecto a su padre */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Estilos para los ítems de SideBar */
+.side-bar-item {
+  color: #333;
+  padding: 10px;
+  margin-bottom: 10px; /* Espacio entre ítems */
+}
+
+/* Estilos cuando el cursor está sobre SideBar */
+.side-bar:hover {
+  width: 200px; /* Ancho expandido */
+  background-color: #d32f2f; /* Color de fondo rojo cuando se expande */
+}
+
+/* Estilos para íconos y texto cuando SideBar se expande */
+.side-bar:hover .side-bar-item {
+  color: white; /* Color del texto */
+  display: block; /* Mostrar texto */
+}

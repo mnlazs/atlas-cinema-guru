@@ -42,3 +42,54 @@
 .nav-container {
   height: 50px; /* O la altura que prefieras */
 }
+
+
+/* src/components/navigation/navigation.css */
+.side-bar {
+  width: 40px; /* Ancho inicial */
+  background-color: #d32f2f; /* Color rojo inicial */
+  transition: width 0.3s ease-in-out;
+  overflow-x: hidden;
+  padding: 9px;
+}
+
+.side-bar i {
+  font-style: normal; /* Esto evitará que los íconos se muestren en cursiva */
+}
+
+.side-bar.expanded {
+  width: 150px; /* Ancho cuando está expandido */
+}
+
+.side-bar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-bar li {
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.side-bar li:hover {
+  background-color: #b71c1c; /* Color más oscuro al pasar el mouse */
+}
+
+.side-bar li i {
+  display: block; /* Asegúrate de que los íconos siempre se muestren */
+}
+
+.side-bar li span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 10px;
+}
+
+.side-bar:hover li span {
+  overflow: visible; /* Muestra el texto completo al pasar el mouse */
+}
