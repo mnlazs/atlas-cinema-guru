@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+//import axios from 'axios';
 import './auth.css';
 
 function Login({ username, password, setUsername, setPassword, setIsLoggedIn }) {
@@ -11,10 +11,10 @@ function Login({ username, password, setUsername, setPassword, setIsLoggedIn }) 
     try {
       
       // Aquí harías la llamada a la API para realizar el login.
-      const response = await axios.post('/api/auth/login', { username, password });
+      //const response = await axios.post('http://localhost:8000/api/auth/login/', { username, password });
       // Aquí manejarías la respuesta de la API y guardarías el token en localStorage.
-      localStorage.setItem('accessToken', response.data.accessToken);
-      setIsLoggedIn(true); // I REMOVED HERE IN ORDER TO DELETE THE ERROR = Login.js:19 Login error: TypeError: setIsLoggedIn is not a function
+      //localStorage.setItem('accessToken', response.data.accessToken);
+      //setIsLoggedIn(true); // I REMOVED HERE IN ORDER TO DELETE THE ERROR = Login.js:19 Login error: TypeError: setIsLoggedIn is not a function
       navigate('/dashboard'); // Rediriges al usuario al Dashboard.
     } catch (error) {
       console.error('Login error:', error);
