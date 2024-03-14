@@ -1,5 +1,3 @@
-// src/components/navigation/SideBar.js
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -17,7 +15,11 @@ function SideBar() {
     setShowActivities(true);
     const fetchActivities = async () => {
       try {
-        const response = await axios.get('/api/activity');
+        const response = await axios.get('/api/activity', {
+          headers: {
+            'Authorization':`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoibWFudWVsIiwiaWF0IjoxNzEwNDM0Mzc4LCJleHAiOjE3MTA1MjA3Nzh9.dHC5k7UCNQa3ruYjbJZy1yvnf2gDHuX-9uxauDj1p4s`
+          }
+        }); // Esta llave cierra la configuración del objeto axios
         setActivities(response.data);
       } catch (error) {
         console.error("Error fetching activities:", error);
@@ -47,7 +49,6 @@ function SideBar() {
           <i className="fas fa-clock"></i><span className={expanded ? 'show' : ''}>Watch Later</span>
         </li>
       </ul>
-      {/* Considera implementar un mecanismo para cambiar showActivities si quieres mostrar esta lista */}
       {showActivities && (
         <ul className="activity-list">
           {activities.slice(0, 10).map((activity, index) => (

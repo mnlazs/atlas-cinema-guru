@@ -13,6 +13,8 @@ function Tag({ genre, filter, genres, setGenres }) {
     setSelected(!selected);
   };
 
+  const tagClass = `tag ${selected ? 'selected' : ''} ${filter ? 'filter' : ''}`;
+
   return (
     <li className={`tag ${selected ? 'selected' : ''}`} onClick={handleTag}>
       {genre}

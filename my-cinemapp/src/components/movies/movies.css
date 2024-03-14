@@ -1,22 +1,57 @@
 /* src/components/movies/movies.css */
 .tag {
   cursor: pointer;
-  background-color: #eee;
+  background-color: #333; /* Cambia a un color oscuro */
   margin: 5px;
-  padding: 5px 10px;
-  border-radius: 15px;
+  padding: 8px 15px; /* Aumenta el padding para más espacio interno */
+  border-radius: 15px; /* Esto dará la forma redondeada */
   display: inline-block;
+  border: 2px solid #fff; /* Añade un borde para las etiquetas */
+  color: white; /* Texto en blanco */
+  font-weight: bold; /* Hace el texto más grueso */
+  transition: background-color 0.3s, transform 0.3s; /* Para una transición suave al seleccionar */
 }
 
 .tag.selected {
-  background-color: #007bff;
-  color: white;
+  background-color: #d9534f; /* Cambia al color cuando está seleccionado */
+  transform: scale(1.1); /* Hace la etiqueta ligeramente más grande al seleccionarla */
 }
 
-.movie-card {
-  border: 1px solid #ddd;
-  margin: 10px;
+/* filter */
+
+.filter-container{
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+.filter-container input,
+.filter-container select {
+  background-color: #555;
+  border: none;
+  margin: 0 10px;
   padding: 10px;
-  border-radius: 8px;
+  border-radius: 5px;
 }
 
+.filter-container select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.filter-container .tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 0;
+
+.filter-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/*Search Bar*/
+
+
+}
